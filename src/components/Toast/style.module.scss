@@ -3,6 +3,7 @@
 .toast {
   @include flex();
   padding: 1.188rem;
+  z-index: 10;
   border-radius: 0.5rem;
   padding: 1rem 3.25rem 1rem 3.75rem;
   width: 34.375rem;

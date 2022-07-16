@@ -9,7 +9,7 @@ import { useState } from 'react';
 import { tuple } from 'utils/type';
 import style from './style.module.scss';
 
-const ToastTypeGroup = tuple('success', 'error', 'info', 'warning');
+const ToastTypeGroup = tuple('default', 'success', 'error', 'info', 'warning');
 type ToastType = typeof ToastTypeGroup[number];
 const ToastDirectionGroup = tuple('top-left', 'top-right', 'bottom-left', 'bottom-right');
 type ToastDirection = typeof ToastDirectionGroup[number];
@@ -21,7 +21,7 @@ type propTypes = {
   delay?: number;
 };
 
-export const Toast = ({ className, text, type, direction, delay }: propTypes) => {
+const Toast = ({ className, text, type, direction, delay }: propTypes) => {
   const [isClose, setisClose] = useState(false);
 
   const handleToastClose = () => {
@@ -70,3 +70,5 @@ Toast.defaultProps = {
   direction: 'bottom-right',
   delay: 5
 };
+
+export default Toast;
