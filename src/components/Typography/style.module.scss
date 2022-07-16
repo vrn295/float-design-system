@@ -1,0 +1,29 @@
+@import 'styles';
+
+.header {
+  @include header;
+}
+
+.heading_1 {
+  @include heading-1;
+}
+
+.heading_2 {
+  @include heading-2;
+}
+
+.sub_heading_1 {
+  @include sub-heading-1;
+}
+
+.sub_heading_2 {
+  @include sub-heading-2;
+}
+
+.body_1 {
+  @include body-text;
+}
+
+.body_2 {
+  @include caption-text;
+}

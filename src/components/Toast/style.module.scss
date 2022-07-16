@@ -1,0 +1,121 @@
+@import 'styles';
+
+.toast {
+  @include flex();
+  padding: 1.188rem;
+  border-radius: 0.5rem;
+  padding: 1rem 3.25rem 1rem 3.75rem;
+  width: 34.375rem;
+  font-size: 1.125rem;
+  background-color: $black-shade;
+  border: #353A3F 1px solid;
+  color: $snow-white;
+  @include flex(row, center, space-between);
+  transition: 0.5s ease-in-out;
+  position: fixed;
+  animation-iteration-count: 1;
+  @include s_tablet {
+    width: calc(100vw - 2rem);
+    padding: 0.875rem 1.625rem;
+    font-size: 1rem;
+    border-radius: 6px;
+  }
+  &_bottom_left {
+    bottom: 2rem;
+    left: 1rem;
+    transform: translateX(-120%);
+    animation-name: move-to-focus-left;
+  }
+  &_bottom_right {
+    bottom: 2rem;
+    right: 1rem;
+    transform: translateX(120%);
+    animation-name: move-to-focus-right;
+  }
+  &_top_right {
+    top: 2rem;
+    right: 1rem;
+    transform: translateX(120%);
+    animation-name: move-to-focus-right;
+  }
+  &_top_left {
+    top: 2rem;
+    left: 1rem;
+    transform: translateX(-120%);
+    animation-name: move-to-focus-left;
+  }
+  &_success {
+    color: $success;
+    border-color: $success;
+    background-color: rgba($success, 0.1);
+    .toast_icon {
+      background-color: $success;
+      border-radius: 50%;
+      padding: 0.4rem;
+    }
+  }
+  &_error {
+    color: $error;
+    background-color: rgba($error, 0.1);
+    border-color: $error;
+  }
+  &_info {
+    color: $info;
+    background-color: rgba($info, 0.1);
+    border-color: $info;
+  }
+  &_warning {
+    color: $warning;
+    background-color: rgba($warning, 0.1);
+    border-color: $warning;
+  }
+  &_main {
+    @include flex();
+  }
+  &_icon {
+    @include flex();
+    margin-right: 1rem;
+  }
+  &_close {
+    cursor: pointer;
+    @include flex();
+    background-color: transparent;
+    border: none;
+    color: inherit;
+  }
+}
+
+@keyframes move-to-focus-right {
+  0% {
+    transform: translateX(120%);
+  }
+  5% {
+    transform: translateX(-10%);
+  }
+  10% {
+    transform: translateX(0%);
+  }
+  90% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+@keyframes move-to-focus-left {
+  0% {
+    transform: translateX(-120%);
+  }
+  5% {
+    transform: translateX(10%);
+  }
+  10% {
+    transform: translateX(0%);
+  }
+  90% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-120%);
+  }
+}

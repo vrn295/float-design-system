@@ -1,0 +1,76 @@
+@import 'styles';
+
+.button {
+  @include body-text;
+  color: $white;
+
+  background-color: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  border-radius: 0.25rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  height: 3.125rem;
+  transition-duration: 250ms;
+  overflow: hidden;
+
+  &:hover {
+    background-color: darken($primary, $amount: 10);
+  }
+
+  &:active {
+    background-color: darken($primary, $amount: 40);
+  }
+
+  &:focus {
+    box-shadow: 0px 0px 6px 6px $p-20;
+  }
+
+  &:disabled {
+    background-color: lighten($gray, $amount: 40);
+    cursor: not-allowed;
+  }
+
+  &.outline {
+    background-color: $white;
+    color: $primary;
+    border: 3px solid $primary;
+
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
+
+    &:active {
+      background-color: lighten($primary, $amount: 40);
+      border-color: lighten($primary, $amount: 40);
+      color: $primary;
+    }
+
+    &:disabled {
+      background-color: $white;
+      border-color: lighten($gray, $amount: 40);
+      color: lighten($gray, $amount: 40);
+      cursor: not-allowed;
+    }
+  }
+
+  &.text {
+    background-color: transparent;
+    color: $primary;
+
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
+
+    &:disabled {
+      color: lighten($gray, $amount: 40);
+      text-decoration: none;
+    }
+  }
+}

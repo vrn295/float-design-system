@@ -1,0 +1,30 @@
+@import 'styles';
+
+.textarea  {
+  border-radius: 10px;
+  padding: 1rem;
+  @include flex(row, flex-start, flex-start);
+  flex-wrap: wrap;
+  border: solid 1px $gray;
+  padding: 2rem 4rem;
+  border: solid 1px $gray-2;
+  font-family: 'Gilroy';
+  transition: 0.25s ease-in-out;
+  p {
+    margin: 1rem 0 0 3rem;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    color: $black-2;
+    font-weight: 400;
+    width: 100%;
+  }
+  &_selected {
+    background-color: rgba($blue-2, 0.051);
+    border-color: transparent;
+  }
+  &:hover {
+    h2 {
+      color: $blue-3;
+    }
+  }
+}

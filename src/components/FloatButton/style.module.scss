@@ -1,0 +1,85 @@
+@import 'styles';
+
+.main {
+  width: fit-content;
+  @include flex(column-reverse, center, center);
+}
+
+.float_btn {
+  background-color: $white;
+  border-radius: 50%;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid $blue-2 3px;
+  color: $blue-2;
+  width: 4em;
+  height: 4em;
+  box-shadow: 0 10px 50px rgba($blue-2, 0.4);
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  &:active {
+    animation: press 0.2s 1 linear;
+  }
+  &_img {
+    width: 100%;
+    height: 100%;
+  }
+  svg {
+    fill: white;
+  }
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.2s ease-in-out;
+  button {
+    background-color: rgba($blue-2, 0.1);
+    border-radius: 50%;
+    padding: 5px;
+    border: none;
+    outline: none;
+    width: 3.2em;
+    height: 3.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    span {
+      width: 0;
+      opacity: 0;
+      display: block;
+    }
+  }
+}
+
+.float_btn:hover + .options {
+  opacity: 1;
+}
+.options:hover {
+  opacity: 1;
+}
+
+@keyframes press {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.92);
+  }
+  to {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,9 @@
+@import 'styles';
+
+.button-group {
+  display: flex;
+
+  &.vertical {
+    flex-direction: column;
+  }
+}

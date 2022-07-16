@@ -1,0 +1,98 @@
+@import 'styles';
+
+.tooltip {
+  position: relative;
+  white-space:normal;
+  width: fit-content;
+  &::after{
+    content: attr(data-title);
+    font-size: 0.8rem;
+    color: $white;
+    background-color: $blue-2;
+    border-radius: 2px;
+    opacity: 0;
+    transition-delay: 2s;
+    padding: 0.625rem 0.75rem;
+    transition: 0.25s ease-in-out;
+    position: absolute;
+    max-width: 300px;
+    width:max-content;
+  }
+  &::before{
+    content: "";
+    width: 0; 
+    height: 0; 
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 9px solid $blue-2;
+    position: absolute;
+    transition: 0.25s ease-in-out;
+    opacity: 0;
+  }
+
+  &_center {
+    &::after{
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+    }
+  }
+  &_bottom {
+    &_center {
+        @include position(-50%, 0%, calc(100% + 9px), 50%, 100%)
+    }
+    &_end {
+      @include position(-100%, 0%, calc(100% + 9px), 100%, 100%, calc(100% - 9px))
+    }
+    &_start {
+      @include position(0%, 0%, calc(100% + 9px), 0%, 100%, 9px)
+    }
+  }
+  &_top {
+    &_center {
+      @include position(-50%, -100%, calc(-100% + 8.5px), 50%, -1px, 50% ,180deg)
+    }
+    &_end {
+      @include position(-100%, -100%, calc(-100% + 8.5px), 100%, -1px, calc(100% - 9px) ,180deg)
+    }
+    &_start {
+      @include position(0%, -100%, calc(-100% + 8.5px), 0%, -1px, calc(50% - 9px) ,180deg)
+    }
+  }
+  &_left {
+    &_center {
+      @include position(-100%, -50%, 50%, calc(0% - 11.5px), 50%, 0% ,90deg)
+    }
+    &_end {
+      @include position(-100%, -50%, 50%, calc(0% - 11.5px), 50%, 0% ,90deg)
+    }
+    &_start {
+      @include position(-100%, -50%, 50%, calc(0% - 11.5px), 50%, 0% ,90deg)
+    }
+  }
+  &_right {
+    &_center {
+      @include position(0%, -50%, 50%, calc(100% + 11.5px), 50%, 100% ,-90deg)
+    }
+    &_end {
+      @include position(0%, -50%, 50%, calc(100% + 11.5px), 50%, 100% ,-90deg)
+    }
+    &_start {
+      @include position(0%, -50%, 50%, calc(100% + 11.5px), 50%, 100% ,-90deg)
+    }
+  }
+  &:hover {
+    &::after, &::before {
+      opacity: 1;
+    }
+  }
+
+  @include m_tablet {
+    &::after {
+      background-color: $black-shade;
+    }
+    &::before {
+      border-bottom: 9px solid $black-shade;
+    }
+  }
+}

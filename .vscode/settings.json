@@ -1,0 +1,10 @@
+{
+  "editor.wordWrap": "on",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "prettier.arrowParens": "avoid",
+  "prettier.configPath": ".prettierrc",
+  "prettier.jsxSingleQuote": true,
+}

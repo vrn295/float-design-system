@@ -1,0 +1,43 @@
+@import '/src/assets/fonts';
+
+@mixin header {
+  font-family: 'Gilroy';
+  font-size: 6.375rem; // 102px
+  line-height: 153px;
+}
+
+@mixin heading-1 {
+  font-family: 'Gilroy';
+  font-size: 2.5rem; // 40px
+  line-height: 60px;
+}
+
+@mixin heading-2 {
+  font-family: 'Gilroy';
+  font-size: 1.75rem; // 28px
+  line-height: 42px;
+}
+
+@mixin sub-heading-1 {
+  font-family: 'Gilroy';
+  font-size: 1.25rem; // 20px
+  line-height: 30px;
+}
+
+@mixin sub-heading-2 {
+  font-family: 'Gilroy';
+  font-size: 1.125rem; // 18px
+  line-height: 27px;
+}
+
+@mixin body-text {
+  font-family: 'Gilroy';
+  font-size: 1rem; // 16px
+  line-height: 24px;
+}
+
+@mixin caption-text {
+  font-family: 'Gilroy';
+  font-size: 0.75rem; // 12px
+  line-height: 18px;
+}
