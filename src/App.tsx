@@ -1,4 +1,4 @@
-import { Toast } from 'components/Toast';
+import Toast from 'components/Toast';
 import Typograpgy from 'components/Typography';
 import { useState } from 'react';
 
