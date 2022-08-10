@@ -3,58 +3,70 @@
 .button {
   @include body-text;
   color: $white;
-
-  background-color: $primary;
+  background-color: $blue-2;
   display: flex;
   align-items: center;
   justify-content: center;
   padding-left: 3rem;
   padding-right: 3rem;
-  border-radius: 0.25rem;
+  border-radius: .5rem;
   outline: none;
   border: none;
   cursor: pointer;
   height: 3.125rem;
   transition-duration: 250ms;
   overflow: hidden;
+  
+  &.secondary_color {
+    background-color: $gray;
+  }
 
   &:hover {
-    background-color: darken($primary, $amount: 10);
+    background-color: $blue-6;
+    &.secondary_color {
+      background-color: darken($color: $gray, $amount: 10);
+    }
   }
 
   &:active {
-    background-color: darken($primary, $amount: 40);
+    background-color: $blue-4;
+    &.secondary_color {
+      background-color: darken($color: $gray, $amount: 30);
+    }
   }
 
-  &:focus {
-    box-shadow: 0px 0px 6px 6px $p-20;
-  }
+  // &:focus {
+  //   box-shadow: inset 0px 0px 0px 6px $blue-8;
+  //   &.secondary_color {
+  //     box-shadow: inset 0px 0px 0px 6px rgba($color: $gray-1, $alpha: 0.25);
+  //   }
+  // }
 
   &:disabled {
-    background-color: lighten($gray, $amount: 40);
+    background-color: rgba($color: $gray-1, $alpha: 0.25);
     cursor: not-allowed;
   }
 
   &.outline {
     background-color: $white;
-    color: $primary;
-    border: 3px solid $primary;
+    color: $blue-2;
+    border: 3px solid $blue-2;
 
     &:hover {
-      background-color: $primary;
+      background-color: $blue-2;
       color: $white;
     }
 
     &:active {
-      background-color: lighten($primary, $amount: 40);
-      border-color: lighten($primary, $amount: 40);
-      color: $primary;
+      background-color: $blue-7;
+      border-color:  $blue-7;
+      color: $blue-2;;
     }
 
     &:disabled {
       background-color: $white;
-      border-color: lighten($gray, $amount: 40);
-      color: lighten($gray, $amount: 40);
+      border-color: rgba($color: $gray-1, $alpha: 0.5);
+      color: rgba($color: $gray-1, $alpha: 0.5);
       cursor: not-allowed;
     }
   }

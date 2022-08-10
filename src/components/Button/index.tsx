@@ -9,6 +9,9 @@ type ButtonType = typeof ButtonTypes[number];
 const ButtonVariants = tuple('primary', 'outline', 'text');
 type ButtonVariant = typeof ButtonVariants[number];
 
+const ColorVariants = tuple('primary', 'secondary', 'red');
+type ColorVariant = typeof ColorVariants[number];
+
 type propTypes = {
   children: ReactNode;
   type?: ButtonType;
@@ -16,17 +19,20 @@ type propTypes = {
   disabled?: boolean;
   className?: string;
   variant?: ButtonVariant;
+  color?: ColorVariant;
 };
 
-const Button = ({ children, type, onClick, disabled, className, variant }: propTypes) => {
+const Button = ({ children, type, onClick, disabled, className, variant, color }: propTypes) => {
   return (
     <button
       className={cls(
         style.button,
         { [style.outline]: variant === 'outline' },
         { [style.text]: variant === 'text' },
+        { [style.secondary_color]: color === 'secondary' },
         className
       )}
+      // style={{ backgroundColor: `${color}` }}
       type={type}
       onClick={onClick}
       disabled={disabled}>
@@ -40,7 +46,8 @@ Button.defaultProps = {
   onClick: () => {},
   disabled: false,
   className: '',
-  variant: 'primary'
+  variant: 'primary',
+  color: 'wheat'
 };
 
 export default Button;
